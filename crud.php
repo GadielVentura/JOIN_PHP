@@ -35,5 +35,21 @@ if(isset($_POST['alta'])){
                 header("Location: cliente.php");
         }
     }
+    if(isset($_POST['pedido'])){
+        $cliente=$_POST['cliente']; //es numerico no lleva comillas en values del insert into
+        $producto=$_POST['producto'];
+        $importe=$_POST['importe'];
+        settype($cliente,'integer');
+
+        $query="INSERT INTO pedido(cliente_id,producto,importe) VALUES($cliente,'$producto','$importe')";
+        $db->query($query);
+        if($db  -> affected_rows < 0){
+            header("Location: index.php?error=hubo  un problema");
+        }else
+        {
+                header("Location: index.php");
+        }
+
+    }
 
 ?>
