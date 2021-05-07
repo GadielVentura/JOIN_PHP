@@ -27,6 +27,8 @@
         <th>Nombre</th>
         <th>Domicilio</th>
         <th>Fecha alta</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </tr>
     
 <?php 
@@ -42,6 +44,8 @@
         $table .= "<td>$row[nombre]</td>";
         $table .= "<td>$row[domicilio]</td>";
         $table .= "<td>$row[fecha_alta]</td>";
+        $table .= "<td><a href=\"editar.php?id=$row[cliente_id]\">Editar</a></td>";
+        $table .= "<td><a href=\"eliminar.php?id=$row[cliente_id]\">Eliminar</a></td>";
         $table .= "</tr>";
     }
     echo $table;
