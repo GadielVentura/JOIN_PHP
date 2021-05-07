@@ -8,11 +8,19 @@
 </head>
 <body>
     <h1>Cliente</h1>
+    <?php  
+    if(isset($_GET['error'])){
+        $mensaje = $_GET['error'];
+
+        echo htmlentities($mensaje);
+    }
+    ?>
     <form action="crud.php" method="POST">
         <p>Nombre: <input type="text" name="nombre"></p>
         <p>Domicilio <input type="text" name="domicilio"></p>
         <input type="submit" name="alta" value="guardar">
     </form>
+
     <table border="1">
 <tr>
         <th>Cliente_id</th>
@@ -20,9 +28,9 @@
         <th>Domicilio</th>
         <th>Fecha alta</th>
     </tr>
-    <?php
     
-<?php  require 'conexion.php';  ?>
+<?php 
+ require 'conexion.php';  
     $db = new Conexion();
 
     $query = "SELECT * FROM cliente";

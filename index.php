@@ -9,6 +9,6 @@
     <title>Index</title>
 </head>
 <body>
-<a href="cliente.php"></a>
+<a href="cliente.php">cliente</a>
 </body>
 </html>

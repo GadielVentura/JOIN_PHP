@@ -14,9 +14,12 @@ if(isset($_POST['alta'])){
 
     $result = $db -> query($query);
 
-    $db = -> affected_rows < 0 ? print 'hubo un problema' : print 'se inserto correctamente' ;
-    if($db = -> affected_rows < 0){
+    
+    if($db  -> affected_rows < 0){
         header("Location: cliente.php?error=hubo  un problema");
+    }else
+    {
+            header("Location: cliente.php");
     }
     
 
